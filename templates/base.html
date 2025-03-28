@@ -69,8 +69,10 @@
     <a href="{{ url_for('addagroproduct') }}" class="about-btn scrollto">Add Agro Products</a>
 {% elif session.get('role') == 'consumer' %}
     <a href="{{ url_for('agroproducts') }}" class="about-btn scrollto">View Agro Products</a>
-{% else %}
+{% elif session.get('role') == 'admin' %}
     <a href="{{ url_for('farmerdetails') }}" class="about-btn scrollto">View Farmer Details</a>
+{% else %}
+      <a href="{{ url_for('farmerdetails') }}" class="about-btn scrollto">List/Buy Agro Products</a>
 {% endif %}
 
 
